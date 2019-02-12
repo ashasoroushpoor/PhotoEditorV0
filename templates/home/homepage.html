@@ -1,0 +1,17 @@
+{% load staticfiles %}
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="{% static 'Home/style.css' %}">
+<a href="{% url 'upload:main' %}"><h2>upload</h2></a><br>
+<a href="{% url 'share:index' %}"><h2>shared content</h2></a><br>
+<a href=""><h2>admin login</h2></a>
+
+
+</body>
+</html>

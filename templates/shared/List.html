@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+{% block body %}
+    {% if all_photos %}
+    <ul>
+        {%for photo in all_photos %}
+        <li><a href="{% url 'share:detail' pk=photo.id %}">{{ photo.name }}</a> </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h2>No photos Uploaded</h2>
+    {% endif %}
+
+{% endblock %}
