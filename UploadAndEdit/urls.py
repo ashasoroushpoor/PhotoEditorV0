@@ -21,5 +21,10 @@ app_name = 'upload'
 
 urlpatterns = [
     path('upload/', views.edit, name='edit'),
+    path('BW/', views.bw, name='black_and_white'),
+    path('CRP/', views.crop, name='crop'),
+    path('RSZ/', views.resize, name='resize'),
+    path('RT/', views.rotate, name='rotate'),
+    path('share', views.share, name='share'),
     path('', views.upload, name='main')
 ]

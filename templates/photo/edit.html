@@ -1,5 +1,41 @@
 {% extends 'base.html' %}
 {% block title %}Photo edit{% endblock %}
 {% block body %}
-    <img src="{{ file_url }}">
+    <img src="{{ photo.file.url }}">
+    <br>
+    <form action={% url 'upload:black_and_white' %} method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<button type="submit">B&W</button>
+                </form>
+				<form action={% url 'upload:crop' %} method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<input name="left" type="text" value="" placeholder="Left"/>
+					<input name="upper" type="text" value="" placeholder="Upper"/>
+					<input name="right" type="text" value="" placeholder="Right"/>
+					<input name="lower" type="text" value="" placeholder="Lower"/>
+					<button type="submit">
+						<i class="fa fa-crop-alt"></i>
+					</button>
+				</form>
+				<form action={% url 'upload:resize' %} method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<input name="width" type="text" value="" placeholder="Width"/>
+					<input name="height" type="text" value="" placeholder="Height"/>
+					<button type="submit">
+						<i class="fa fa-arrows-alt"></i>
+					</button>
+				</form>
+				<form action={% url 'upload:rotate' %} method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<input name="angle" type="text" value="" placeholder="Angle"/>
+					<button type="submit">
+						<i class="fa fa-rotate-right"></i>
+					</button>
+				</form>
+				<form action={% url 'upload:share' %} method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<button type="submit">
+						SHARE
+					</button>
+				</form>
 {% endblock %}

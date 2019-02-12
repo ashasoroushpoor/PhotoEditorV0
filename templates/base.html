@@ -24,13 +24,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'share:index' %}">IMGEditor</a>
+            <a class="navbar-brand" href="/">IMGEditor</a>
         </div>
 
         <!-- Items -->
         <div class="collapse navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav">
-                <li class="{% block albums_active %}{% endblock %}"><a href="{% url 'share:index' %}"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Shared Photos</a></li>
+                <li class="active"><a href="{% url 'share:index' %}"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Shared Photos</a></li>
             </ul>
             <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'share:index' %}">
                 <div class="form-group">
