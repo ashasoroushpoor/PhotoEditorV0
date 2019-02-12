@@ -12,8 +12,9 @@ class User(models.Model):
 
 class Photo(models.Model):
     uploader = models.ForeignKey(User, on_delete=models.CASCADE)
-    filename = models.CharField(max_length=500, default='')
-    name = models.CharField(max_length=250, default='')
+    caption = models.CharField(max_length=25000, default='')
+    file = models.ImageField(default='')
+    shared = models.BooleanField(default=False)
 
     def get_absolute_url(self):
         return reverse('share:detail', kwargs={'pk': self.pk})

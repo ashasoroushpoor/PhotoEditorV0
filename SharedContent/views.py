@@ -20,6 +20,7 @@ class DetailView(generic.DetailView):
     model = Photo
     template_name = 'shared/detail.html'
 
+
 class PhotoCreate(CreateView):
     model = Photo
     fields = ['name']

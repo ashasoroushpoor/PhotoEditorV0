@@ -4,7 +4,14 @@
     {% if all_photos %}
     <ul>
         {%for photo in all_photos %}
-        <li><a href="{% url 'share:detail' pk=photo.id %}">{{ photo.name }}</a> </li>
+        <li><a href="{% url 'share:detail' pk=photo.id %}">
+            <div class="box">
+					<div class="header">
+						{{ photo.uploader.username }}
+					</div>
+					<img src="{{ photo.file }}">
+				</div>
+        </a> </li>
         {% endfor %}
     </ul>
     {% else %}

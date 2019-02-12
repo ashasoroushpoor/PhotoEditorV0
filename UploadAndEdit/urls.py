@@ -20,6 +20,6 @@ from . import views
 app_name = 'upload'
 
 urlpatterns = [
-    path('upload/', views.upload, name='upload'),
-    path('', views.uploadpage, name='main')
+    path('upload/', views.edit, name='edit'),
+    path('', views.upload, name='main')
 ]
